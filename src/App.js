@@ -30,12 +30,11 @@ componentDidMount(){
         })
         return (
             <div className ='tc'>
-                <h1 className='f1'>Gentle  Bots</h1>
+                <h1 className='f1'>Robodash  Bots</h1>
                 <SearchBox searchChange={this.onSearchChange }/>
                 <Scroll>
                     <CardList robots={ filteredRobots } />
-                </Scroll>
-                
+                </Scroll>                
             </div>
         );
     }

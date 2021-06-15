@@ -10,5 +10,4 @@ const Scroll = ({children}) => {
 
 
 
-
 export default Scroll;
