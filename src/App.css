@@ -13,3 +13,16 @@ h1{
     font-weight: 200;
     color: #0ccac4;
 }
+
+h2 { 
+    color: azure;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+h2 li{ 
+    list-style: none;
+    padding-left: 10px;
+    text-transform: uppercase;
+
+}
