@@ -4,6 +4,7 @@ import Scroll from '../components/Scroll';
 import SearchBox from '../components/SearchBox';
 import './App.css';
 
+
  class App extends Component {
     constructor(){
         super()
@@ -12,11 +13,11 @@ import './App.css';
             searchfield: ''
         }
         
-    } 
-    //we dont need arrow functions when using //componentDidMount because its a javascript function...
+        } 
+  //  we dont need arrow functions when using //componentDidMount because its a javascript function...
 componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
-    .then(Response => Response.json())
+    .then(response => response.json())
 
     .then( users => this.setState({ robots: users })); 
     
@@ -33,25 +34,22 @@ componentDidMount(){
         return robot.name.toLowerCase().includes(searchfield.toLowerCase())
         })
 
-        //using ternary if statement
-       return !robots.length ?
-         <h2> Loading.... </h2> :
-            (
-                <div className ='tc'>  
-                    <h1 className='f1'>Robodash  Bots</h1>
-                    <SearchBox searchChange = {this.onSearchChange }/>
-                    <Scroll>
-                        <CardList robots={ filteredRobots } />
-                    </Scroll>    
-                     <h2>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                    </h2>            
-                </div>
+        if (robots.length === 0)
+            return <h2> Loading.... </h2>   
+        else {
+           return (
+            <div className ='tc'>  
+                <h1 className='f1'>Gentle Bots</h1>
+                <SearchBox searchChange = {this.onSearchChange }/>
+                <Scroll>
+                    <CardList robots={ filteredRobots } />      
+                </Scroll>                     
+                
+            </div>
                   );
-            }
+         }       
         }
+    }
     
  
 
